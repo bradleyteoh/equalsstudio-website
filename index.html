@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <meta name="theme-color" content="#1A1A1A" />
+  <meta name="description" content="Equals Design Studio — Interior design and renovation for commercial and residential spaces in Malaysia. Operated by Equals Design And Build (SSM 202103376576)." />
+  <title>Equals Design Studio — Interior Design & Renovation, Malaysia</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:      #1A1A1A;
+      --cream:      #E8E0D3;
+      --light:      #F5F2EE;
+      --mid:        #8C8278;
+      --font-sans:  'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--light);
+      color: var(--black);
+      line-height: 1.6;
+    }
+
+    /* ── Header ──────────────────────────────────── */
+    header {
+      background: var(--black);
+      color: var(--cream);
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header .logo {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    header nav a {
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-left: 2rem;
+      opacity: 0.75;
+    }
+
+    header nav a:hover { opacity: 1; }
+
+    /* ── Hero ────────────────────────────────────── */
+    .hero {
+      background: var(--black);
+      color: var(--cream);
+      padding: 6rem 2rem 5rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 300;
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      opacity: 0.65;
+      max-width: 480px;
+      margin: 0 auto;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Sections ────────────────────────────────── */
+    section {
+      padding: 5rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      letter-spacing: 0.01em;
+    }
+
+    p { color: #444; font-size: 0.95rem; max-width: 600px; }
+
+    /* ── Services grid ───────────────────────────── */
+    .services {
+      background: var(--cream);
+    }
+
+    .services-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .card {
+      background: var(--light);
+      padding: 2rem 1.5rem;
+      border-radius: 2px;
+    }
+
+    .card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .card p {
+      font-size: 0.85rem;
+      color: var(--mid);
+      max-width: none;
+    }
+
+    /* ── Contact ─────────────────────────────────── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .contact-item {
+      padding: 1.5rem;
+      background: var(--cream);
+      border-radius: 2px;
+    }
+
+    .contact-item .label {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-item a {
+      color: var(--black);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .contact-item a:hover { text-decoration: underline; }
+
+    /* ── Footer ──────────────────────────────────── */
+    footer {
+      background: var(--black);
+      color: var(--cream);
+      padding: 3rem 2rem 2rem;
+      font-size: 0.8rem;
+      line-height: 1.7;
+    }
+
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+
+    .footer-block .label {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-block a {
+      color: var(--cream);
+      text-decoration: none;
+      opacity: 0.85;
+      display: inline-block;
+      margin-right: 0.75rem;
+    }
+
+    .footer-block a:hover { opacity: 1; text-decoration: underline; }
+
+    .footer-bottom {
+      max-width: 900px;
+      margin: 2rem auto 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(232, 224, 211, 0.15);
+      text-align: center;
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <span class="logo">Equals Design Studio</span>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Spaces designed for the way you work and live.</h1>
+    <p>Interior design and renovation for commercial and residential projects across Malaysia.</p>
+  </div>
+
+  <section id="about">
+    <div class="section-label">About</div>
+    <h2>Who we are</h2>
+    <p>Equals Design Studio is a Malaysia-based interior design and renovation practice, founded by Cayden Teoh and Trisha Teoh. We work with corporate offices, retail environments, and residential clients across the Klang Valley and beyond — translating briefs into spaces that are functional, considered, and built to last.</p>
+    <p style="margin-top:1rem">Our team handles design, on-site project management, and client liaison end-to-end. Past and ongoing work spans corporate offices, supermarkets, shopping mall fit-outs, and private homes.</p>
+  </section>
+
+  <div class="services">
+    <div class="services-inner" id="services">
+      <div class="section-label">Services</div>
+      <h2>What we do</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Commercial</h3>
+          <p>Corporate offices, supermarkets, shopping malls, and large-format retail. Full design and project management from concept to handover.</p>
+        </div>
+        <div class="card">
+          <h3>Residential</h3>
+          <p>Homes and condominiums designed around how you live — practical, personal, and well-crafted.</p>
+        </div>
+        <div class="card">
+          <h3>Renovation</h3>
+          <p>Fit-outs, refurbishments, and space upgrades. We manage contractors, materials, and timelines so you don't have to.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="contact">
+    <div class="section-label">Contact</div>
+    <h2>Get in touch</h2>
+    <p>We're based in Malaysia and available for projects across the region.</p>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="label">Email</div>
+        <a href="mailto:cayden.teoh@equalsstudio.com">cayden.teoh@equalsstudio.com</a>
+      </div>
+      <div class="contact-item">
+        <div class="label">WhatsApp</div>
+        <a href="https://wa.me/60165515972">+60 16-551 5972</a>
+      </div>
+      <div class="contact-item">
+        <div class="label">Location</div>
+        <span style="font-size:0.9rem">Malaysia</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-block">
+        <div class="label">Registered Business</div>
+        Equals Design And Build<br />
+        SSM No. 202103376576 (PG0522961-X)<br />
+        <span style="opacity:0.7">Trading as Equals Design Studio</span>
+      </div>
+      <div class="footer-block">
+        <div class="label">Registered Office</div>
+        C-15-5, Residensi Alstonia<br />
+        Jalan Kiara Sungai Long<br />
+        Bandar Sungai Long<br />
+        43000 Kajang, Selangor, Malaysia
+      </div>
+      <div class="footer-block">
+        <div class="label">Contact</div>
+        <a href="mailto:cayden.teoh@equalsstudio.com">cayden.teoh@equalsstudio.com</a><br />
+        <a href="https://wa.me/60165515972">+60 16-551 5972</a>
+      </div>
+      <div class="footer-block">
+        <div class="label">Policies</div>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Equals Design And Build. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
