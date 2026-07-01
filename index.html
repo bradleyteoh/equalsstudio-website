@@ -142,6 +142,56 @@
       max-width: none;
     }
 
+    /* ── Portfolio ───────────────────────────────── */
+    .portfolio-card {
+      background: var(--cream);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .portfolio-card .thumb {
+      aspect-ratio: 4 / 3;
+      background: #ddd3c4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--mid);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .portfolio-card .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .portfolio-card .body { padding: 1.5rem; }
+
+    .portfolio-card .meta {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 0.6rem;
+    }
+
+    .portfolio-card h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .portfolio-card p {
+      font-size: 0.85rem;
+      color: var(--mid);
+      max-width: none;
+    }
+
     /* ── Contact ─────────────────────────────────── */
     .contact-grid {
       display: grid;
@@ -226,6 +276,7 @@
     <nav>
       <a href="#about">About</a>
       <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
@@ -262,6 +313,58 @@
       </div>
     </div>
   </div>
+
+  <!-- ============================================================
+       PORTFOLIO — this is where our project work goes.
+
+       TO ADD A PROJECT:
+       1. Put the photo in the /images folder (e.g. images/sunway-office.jpg).
+       2. Copy one <div class="portfolio-card"> … </div> block below.
+       3. Swap the placeholder thumb for your photo — replace
+            <div class="thumb">Add photo</div>
+          with
+            <div class="thumb"><img src="/images/sunway-office.jpg" alt="Short description of the project"></div>
+       4. Edit the meta line, the title (<h3>), and the description (<p>).
+
+       The three cards below are EXAMPLES — replace or delete them.
+       (Or just tell Claude Code: "add a portfolio project" and give it
+        the photo, title and description.)
+       ============================================================ -->
+  <section id="portfolio">
+    <div class="section-label">Portfolio</div>
+    <h2>Selected work</h2>
+    <p>A selection of recent commercial and residential projects.</p>
+    <div class="grid">
+
+      <div class="portfolio-card">
+        <div class="thumb">Add photo</div>
+        <div class="body">
+          <div class="meta">Commercial · Office</div>
+          <h3>Example — Corporate Office Fit-Out</h3>
+          <p>Replace this with a short description: the client type, the size of the space, and what we delivered. One or two sentences reads best.</p>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <div class="thumb">Add photo</div>
+        <div class="body">
+          <div class="meta">Commercial · Retail</div>
+          <h3>Example — Supermarket Interior</h3>
+          <p>Replace this with a short description of the project — scope, location, and the result. Keep it concise.</p>
+        </div>
+      </div>
+
+      <div class="portfolio-card">
+        <div class="thumb">Add photo</div>
+        <div class="body">
+          <div class="meta">Residential</div>
+          <h3>Example — Private Residence</h3>
+          <p>Replace this with a short description of the home — the brief, the design approach, and the outcome.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <section id="contact">
     <div class="section-label">Contact</div>
