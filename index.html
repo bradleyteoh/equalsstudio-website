@@ -278,13 +278,6 @@
       background: var(--black);
       color: var(--cream);
       overflow: hidden;
-      transition: opacity 0.7s ease, visibility 0.7s ease;
-    }
-
-    .intro.intro-hidden {
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
     }
 
     .intro-bg {
@@ -361,13 +354,8 @@
       letter-spacing: 0.25em;
       text-transform: uppercase;
       padding: 0.9rem 2.75rem;
-      cursor: pointer;
-      transition: background 0.25s ease, color 0.25s ease;
-    }
-
-    .intro-enter:hover {
-      background: var(--cream);
-      color: var(--black);
+      opacity: 0.6;
+      cursor: not-allowed;
     }
   </style>
 </head>
@@ -384,7 +372,7 @@
       <div class="intro-center">
         <h1>One Brick at a Time</h1>
         <div class="intro-byline">by Equals Design Studio</div>
-        <button class="intro-enter" id="introEnter" type="button">Enter</button>
+        <button class="intro-enter" type="button" disabled>Coming Soon</button>
       </div>
     </div>
   </div>
@@ -536,13 +524,6 @@
       &copy; 2026 Equals Design And Build. All rights reserved.
     </div>
   </footer>
-
-  <script>
-    document.getElementById('introEnter').addEventListener('click', function () {
-      document.getElementById('intro').classList.add('intro-hidden');
-      document.body.classList.remove('intro-active');
-    });
-  </script>
 
 </body>
 </html>
