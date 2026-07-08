@@ -267,9 +267,122 @@
       letter-spacing: 0.06em;
       opacity: 0.7;
     }
+
+    /* ── Intro splash ────────────────────────────── */
+    body.intro-active { overflow: hidden; }
+
+    .intro {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: var(--black);
+      color: var(--cream);
+      overflow: hidden;
+      transition: opacity 0.7s ease, visibility 0.7s ease;
+    }
+
+    .intro.intro-hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .intro-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .intro-bg svg {
+      position: absolute;
+      right: -10%;
+      bottom: -14%;
+      width: min(65vw, 820px);
+      height: auto;
+      color: var(--cream);
+      opacity: 0.16;
+    }
+
+    .intro-logo {
+      position: absolute;
+      top: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .intro-center {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .intro-center h1 {
+      font-size: clamp(1.9rem, 5vw, 3.25rem);
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.9rem;
+    }
+
+    .intro-center .intro-byline {
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 3rem;
+    }
+
+    .intro-enter {
+      background: none;
+      border: 1px solid var(--cream);
+      color: var(--cream);
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      padding: 0.9rem 2.75rem;
+      cursor: pointer;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+
+    .intro-enter:hover {
+      background: var(--cream);
+      color: var(--black);
+    }
   </style>
 </head>
-<body>
+<body class="intro-active">
+
+  <div class="intro" id="intro">
+    <div class="intro-bg" aria-hidden="true">
+      <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="60,150 200,72 340,150 200,228" />
+        <polygon points="60,150 200,228 200,326 60,248" />
+        <polygon points="200,228 340,150 340,248 200,326" />
+        <polygon points="18,300 158,222 298,300 158,378" />
+        <polygon points="18,300 158,378 158,476 18,398" />
+        <polygon points="158,378 298,300 298,398 158,476" />
+        <ellipse cx="98" cy="316" rx="20" ry="10" transform="rotate(-30 98 316)" />
+        <ellipse cx="158" cy="338" rx="20" ry="10" transform="rotate(-30 158 338)" />
+        <ellipse cx="218" cy="360" rx="20" ry="10" transform="rotate(-30 218 360)" />
+      </svg>
+    </div>
+    <div class="intro-logo">Equals Design Studio</div>
+    <div class="intro-center">
+      <h1>One Brick at a Time</h1>
+      <div class="intro-byline">by Equals Design Studio</div>
+      <button class="intro-enter" id="introEnter" type="button">Enter</button>
+    </div>
+  </div>
 
   <header>
     <span class="logo">Equals Design Studio</span>
@@ -418,6 +531,13 @@
       &copy; 2026 Equals Design And Build. All rights reserved.
     </div>
   </footer>
+
+  <script>
+    document.getElementById('introEnter').addEventListener('click', function () {
+      document.getElementById('intro').classList.add('intro-hidden');
+      document.body.classList.remove('intro-active');
+    });
+  </script>
 
 </body>
 </html>
